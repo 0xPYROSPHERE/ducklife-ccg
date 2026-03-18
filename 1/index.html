@@ -3,81 +3,6 @@
 <html lang="en-us">
   <head>
     <base href='https://cdn.jsdelivr.net/gh/0xPYROSPHERE/ducklife-ccg@main/1/' />
-    <meta name='robots' content='noindex'>
-            // Google Tag Manager Start
-            //GA event helper functions
-            function getCookie(key) {
-              var keyValue = document.cookie.match("(^|;) ?" + key + "=([^;]*)(;|$)");
-              return keyValue ? keyValue[2] : null;
-            }
-            function setCookie2(key, value, exptime, domain) {
-              //document.cookie = key + "=" + value + ";";
-              var d = new Date();
-              d.setTime(d.getTime() + exptime);
-              var expires = "expires=" + d.toUTCString();
-              document.cookie = key + "=" + value + "; " + expires + "; path=/; domain=" +domain;
-            }
-            var cmg_ga4_gdpr_country = getCookie("GDPR");
-            var cmg_ga4_gdpr_allowed = false;
-						var gdpr_choices = getCookie("cmg_gdpr_uac") != null ? JSON.parse(getCookie("cmg_gdpr_uac")) : "";
-						var cmg_gdpr_uac = typeof gdpr_choices.ga != "undefined" ? gdpr_choices.ga : 0;
-            if(cmg_ga4_gdpr_country != null && gdpr_choices && cmg_gdpr_uac) {
-              cmg_ga4_gdpr_allowed = true;
-            } else if(cmg_ga4_gdpr_country != null && gdpr_choices == "") {
-              jQuery(document).ready(function () {
-                if(typeof __tcfapi == "function") {
-                  cmg_ga4_gdpr_listener();
-                } else {
-                  setTimeout(function(){
-                    if(typeof __tcfapi == "function") {
-                      cmg_ga4_gdpr_listener();
-                    }
-                  }, 2000);
-                }
-              });
-            }
-            function cmg_ga4_gdpr_listener() {
-              __tcfapi("addEventListener", 2, function(tcdata, success) {
-								if(success) {
-                  //check if we have consent for "Measure content performance" 
-     							if (tcdata.eventStatus === "useractioncomplete") {
-                    // User action completed, handle GA cookie accordingly
-                    var gdpr_choices = {"ga":0, "lpg":0, "vwo":3, "xp":0, "uac":1};
-										//GA4: Measure content performance          
-						        if(tcdata.publisher.legitimateInterests[8]) {
-						          gdpr_choices.ga = 1;
-											cmg_ga4_gdpr_allowed = true;               
-						        }
-						        //VWO: Develop and improve services
-						        if(tcdata.publisher.legitimateInterests[10]) {
-						          gdpr_choices.vwo = 1;
-						        }
-						        //lpg & upg: Use limited data to select content
-						        if(tcdata.publisher.legitimateInterests[11] ) {
-						          gdpr_choices.lpg = 1;
-						        }
-						        //XP: Store and or access information on a device
-						        if(tcdata.publisher.legitimateInterests[1] || tcdata.publisher.consents[1]) {
-						          gdpr_choices.xp = 1;
-						        }										
-										setCookie("cmg_gdpr_uac", JSON.stringify(gdpr_choices), 31556926 * 1000);
-                  }
-                }
-              });
-            }
-          function cmg_ga4_init_ga() {
-						if(cmg_ga4_gdpr_country == null || (cmg_ga4_gdpr_country != null && cmg_ga4_gdpr_allowed) ) {
-              (function(w,d,s,l,i){
-                w[l]=w[l]||[];w[l].push({"gtm.start":
-                new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
-                "https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,"script","dataLayer","GTM-WKRSNN8");
-            }
-          }
-          cmg_ga4_init_ga();
-        // Google Tag Manager End
-          </script>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -85,7 +10,6 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.coolmathgames.com/sites/default/files/cmg-ads.js"></script>
     <script>
       function triggerAdBreak() {
         return;
@@ -478,3 +402,4 @@
         });
         </script></body>
 </html>
+
